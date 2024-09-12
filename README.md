@@ -1,87 +1,125 @@
 # Online Retail Customer Segmentation
 
-### Problem Statement:
+![Project Category](https://img.shields.io/badge/Project%20Category-Clustering-blue) ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Enabled-brightgreen)
 
-In this project, our task is to identify major customer segments on a transactional data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for an UK based and registered non-store online retail. The company mainly sells unique all occasion gifts. Many customers of the company are wholesalers.
+**Tools & Technologies Used**:  
+![Python](https://img.shields.io/badge/Python-3.9-blue) ![NumPy](https://img.shields.io/badge/NumPy-Enabled-orange) ![Pandas](https://img.shields.io/badge/Pandas-Enabled-yellowgreen) ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red) ![Seaborn](https://img.shields.io/badge/Seaborn-Data%20Visualization-yellow) ![Jupyter Notebooks](https://img.shields.io/badge/Jupyter-Notebook-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-Machine%20Learning-green)
 
-Customer segmentation is a way to split customers into groups based on certain characteristics that those customers share. Customer segmentation will allow marketers
-to better tailor their marketing efforts to various audience subsets. The dataset contains 541909 records of transactions with 8 features.
+### Overview
 
----
-### Data Description:
+This project focuses on analyzing data from a UK-based online retail company that sells unique gifts. The aim is to segment customers into distinct groups based on their purchasing behavior. By leveraging clustering algorithms and RFM analysis, we can better understand customer behavior and optimize marketing strategies to improve sales and customer satisfaction.
 
-The dataset contains 541909 records and 8 features which consists of:
-
-● InvoiceNo: Invoice number. Nominal, a 6 digit integral number uniquely assigned to each transaction. If this code starts with letter ‘c’, it indicates a cancellation.
-
-● StockCode: Product code. Nominal, a 5 digit integral number uniquely assigned to each distinct product.
-
-● Description: Product name. Nominal
-
-● Quantity: The quantities of each product per transaction. Numeric.
-
-● InvoiceDate: Invoice date and time. Numeric, the day and time when each transaction was generated.
-
-● UnitPrice: Unit Price. Numeric, product price per unit in sterling.
-
-● CustomerID: Customer number. Nominal, a 5 digit integral number uniquely assigned to each customer.
-
-● Country: Country name. Nominal, the name of the country where each customer resides.
+![Customer Clusters](https://drive.google.com/uc?export=view&id=1AKPMsInteturJu3dGxs-krTpXTdgBvqZ)
 
 ---
-### Data Exploration:
 
-Let us now summarize the insights generated from EDA:
+### Problem Statement
 
-● White hanging heart T-light holder was the most sold product and Green with metal bag charm was one of the least sold products.
-
-● UK had the most number of customers which is pretty obvious because it is an UK based online retail company.
-
-● Saudi Arabia followed by Bahrain had the least number of customers.
-
-● There are 4338 unique customers and only 10 customers had an order share of approx 9% which implies that these customers could be wholesalers.
-
-● The distribution of all the variables were heavily right skewed and log transformation was applied to bring them close to a normal distribution.
-
-● Most of the customers had made a purchase on Thursday followed by Wednesday and the least number of purchases was made on Friday.
-
-● The most purchases were made during the festive months of October to December and the least number of purchases was made during the initial months of January
-and February.
-
-● Most of the people had made their purchases during the afternoon period and very less number of purchases during evening.
+The task involves analyzing transactional data from a UK-based online retail company specializing in unique gifts. We aim to segment customers into groups based on their transactional behavior, improving customer targeting and enhancing overall marketing efforts.
 
 ---
-### RFM Segmentation & Analysis:
 
-Recency, frequency and monetary value is a marketing analysis tool used to identify a company’s or an organization’s best customers by measuring and analyzing spending
-habits.
+### Data Description
 
-The RFM model is based on three quantitative factors:
+- **Data Source**: [Dataset](https://docs.google.com/spreadsheets/d/1CAadjCrCzqgLQSGXDkrlkfViGvEKNPdU/edit?usp=drive_link&ouid=116881307272570964336&rtpof=true&sd=true)
 
-    ● Recency: How recently a customer has made a purchase
-
-    ● Frequency: How often a customer makes a purchase
-
-    ● Monetary: How much money a customer spends on purchases
-
-RFM analysis numerically ranks a customer in each of these three categories, generally on a scale of 1 to 5. The best customers would receive a top score in every category. These three RFM factors can be used to reasonably predict how likely or unlikely it is that a customer will do business again with a firm or company. RFM analysis allows a comparison between potential customers or clients. It gives organizations a sense of how much revenue comes from repeat customers vs new customers, and which levers they can pull to try to make customers happier so they become repeat purchasers. Despite the useful information that is acquired through RFM analysis, firms must take into consideration that even the best customers will not want to be over solicited, and the lower ranking customers may be cultivated with additional marketing efforts.
+We've gathered data about transactions from an online store based in the UK. Picture it like peeking into a world of shopping where each transaction tells a story. We know details like the unique transaction number, the products bought (each with its own name and code), how many of each product was purchased, when the purchase happened, the price of each product, and even where the customers live. It's like diving into a treasure trove of shopping adventures!
 
 ---
-### Clustering Models:
 
-Clustering can be considered the most important unsupervised learning problem, so as every other problem of this kind, it deals with finding a structure in a collection of unlabeled data. A loose definition of clustering could be “the process of organizing objects into groups whose members are similar in some way”. A cluster is therefore a collection of objects which are similar between them and are dissimilar to the objects belonging to other clusters.
+### Preliminary Questions
 
-In Addition to the K-means clustering model implemented on RFM data, we have implemented K-means separately on Recency, Monetary and Frequency, Monetary data
-along with hierarchical clustering on RFM data to compare the performances of each clustering method.
-We have again used the silhouette score method and the elbow method for determining the best ‘K’ value for K-means clustering and a dendrogram for hierarchical clustering. A dendrogram is a diagram that shows the hierarchical relationship between objects. It is most commonly created as an output from hierarchical clustering. The main use of a dendrogram is to work out the best way to allocate objects to clusters.
+1. What are the typical purchasing patterns of customers?
+2. Can we identify distinct customer segments based on behavior?
+3. Who are the high-value customers based on RFM scores?
 
-Model Name | Data | Optimal Number of Clusters
----------- | ---- | --------------------------
-K-Means | RM | 4
-K-Means | FM | 3
-K-Means | RFM | 3
-Hierarchical | RFM | 2
+---
 
-We can observe from the different clustering methods that the optimal number of clusters for each method is around 2 or 3. Thus, we can consider 3 as the optimal number of clusters in our final model of K-means on RFM data and identify the different customer segments.
+### Methodology
 
-***
+- **Data Cleaning**: Handled missing values, removed duplicates, and addressed anomalies in the dataset.
+  
+- **Feature Engineering**: Derived new features like RFM scores to capture customer behavior.
+
+- **Data Visualization**: Used charts to identify trends and patterns in customer purchasing.
+
+- **RFM Segmentation**: Grouped customers based on Recency, Frequency, and Monetary value.
+  ![RFM](https://drive.google.com/uc?export=view&id=1mahuLJMXi9hl9Xfpa2Mde1-1VoEY6iNj)
+
+- **Clustering Models**: Applied K-means and hierarchical clustering algorithms.
+
+- **Evaluation Metrics**: Used Silhouette score and elbow method to optimize clustering results.
+
+---
+
+### Results & Insights
+
+1. **Customer Segments**: Identified major customer segments such as Loyal Customers, Casual Buyers, and New Customers.
+    ![Clusters](https://drive.google.com/uc?export=view&id=12dVo4jbXTYjkl7xRvoFnSobkG8XR8uWl)
+
+2. **Popular Products**: Discovered top-selling products and slow-moving inventory.
+    ![Customer Segments](https://drive.google.com/uc?export=view&id=1-LgcHk-SxRRh88cGtS4nXpnVrgvOMc1J)
+
+3. **Geographic Insights**: Analyzed customer location data for targeted marketing.
+    ![RFM Analysis](https://drive.google.com/uc?export=view&id=1KMigoRXSqeBLmGE620vVJU2UmnKFZmq6)
+
+4. **Seasonal Trends**: Identified peak shopping seasons, such as Christmas.
+    ![Seasonal Shopping](https://drive.google.com/uc?export=view&id=1wwdz3zCkRa0IHF3hoUu1zZN9kkpj2ePS)
+
+---
+
+### Model Comparison
+
+| Clustering Method        | Optimal Clusters | Description                                                |
+|--------------------------|------------------|------------------------------------------------------------|
+| **K-Means**               | 3                | Segments: Loyal, Casual, and New Customers                  |
+| **Hierarchical Clustering** | 2-3              | Dendrograms suggest 2 or 3 clusters depending on cut depth  |
+
+---
+
+### Impact and Implications
+
+- **Targeted Marketing**: Tailored ads for specific customer groups.
+- **Customer Relationship**: Enhanced relationships with personalized offers.
+- **Product Development**: Data-driven decisions for product enhancement.
+- **Cost Efficiency**: Focused on high-value customers to maximize ROI.
+
+---
+
+### Challenges & Limitations
+
+1. **Data Quality**: Missing and duplicate data required careful handling.
+2. **Behavior Complexity**: Differentiating customer behaviors can be complex.
+3. **Privacy Concerns**: Ensuring data privacy and ethical use of customer information.
+4. **Generalization**: Segmentations might not apply universally.
+
+---
+
+### Future Scope
+
+1. **Refined Segmentation**: Use advanced algorithms for even more accurate segments.
+2. **Predictive Analytics**: Predict future customer behavior for proactive strategies.
+3. **Omnichannel Analysis**: Analyze customer behavior across online, store, and mobile.
+
+---
+
+### Conclusion
+
+This project successfully segmented customers into actionable clusters using clustering techniques and RFM analysis, helping to improve marketing efforts and customer engagement.
+
+---
+
+### Resources
+
+- **Notebook**: [Google Colab Notebook](https://colab.research.google.com/drive/1wpHy0vwIxP5BZhgMgsZiBqPLEV1XS08U?usp=sharing)
+- **GitHub**: [Online Retail Customer Segmentation](https://github.com/Rudrajit12/Online-Retail-Customer-Segmentation)
+
+### Author
+
+- **Name**: Rudrajit Bhattacharyya
+  This project was a part of AlmaBetter Full Stack Data Science Certificate.
+- **Email**: [rudrajitb24@gmail.com](mailto:rudrajitb24@gmail.com)  
+- **LinkedIn**: [rudrajitb](https://www.linkedin.com/in/rudrajitb/)  
+- **GitHub**: [Rudrajit12](https://github.com/Rudrajit12)
+
+---
