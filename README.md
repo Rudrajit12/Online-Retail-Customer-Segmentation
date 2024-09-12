@@ -116,9 +116,9 @@ This project successfully segmented customers into actionable clusters using clu
 
 ### Author
 
-- **Name**: Rudrajit Bhattacharyya
+**Name**: Rudrajit Bhattacharyya
 
-  This project was a part of AlmaBetter Full Stack Data Science Certificate.
+This project was a part of AlmaBetter Full Stack Data Science Certificate.
   
 - **Email**: [rudrajitb24@gmail.com](mailto:rudrajitb24@gmail.com)  
 - **LinkedIn**: [rudrajitb](https://www.linkedin.com/in/rudrajitb/)  
