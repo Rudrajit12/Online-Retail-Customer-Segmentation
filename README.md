@@ -29,9 +29,16 @@ We've gathered data about transactions from an online store based in the UK. Pic
 
 ### Preliminary Questions
 
-1. What are the typical purchasing patterns of customers?
-2. Can we identify distinct customer segments based on behavior?
-3. Who are the high-value customers based on RFM scores?
+1. **Customer Behavior Understanding**:
+    - What are the typical purchasing patterns of customers?
+    - How frequently do customers make purchases within the given timeframe?
+    - What is the distribution of purchase amounts across customers?
+2. **Segmentation Potential**:
+    - Can we identify distinct groups of customers based on their purchasing behavior?
+    - Are there any trends or clusters in the data that suggest different customer segments?
+3. **High-Value Customer Identification**:
+    - Which customers have the highest recency, frequency, and monetary value (RFM) scores?
+    - How do these high-value customers differ from the rest in terms of their purchasing behavior?
 
 ---
 
@@ -109,15 +116,25 @@ This project successfully segmented customers into actionable clusters using clu
 
 ---
 
+### References
+
+1. [Kaggle - Online Retail Customer Segmentation Analysis](https://www.kaggle.com/code/lakshmi25npathi/online-retail-customer-segmentation-analysis)
+2. [Towards Data Science - Customer Segmentation in Online Retail](https://towardsdatascience.com/customer-segmentation-in-online-retail-1fc707a6f9e6)
+3. (https://blog.converted.in/en-us/blog/a-detailed-guide-on-customer-segmentation-in-retail-e-commerce-business)
+
+---
+
 ### Resources
 
 - **Notebook**: [Google Colab Notebook](https://colab.research.google.com/drive/1wpHy0vwIxP5BZhgMgsZiBqPLEV1XS08U?usp=sharing)
 - **GitHub**: [Online Retail Customer Segmentation](https://github.com/Rudrajit12/Online-Retail-Customer-Segmentation)
 
-### Author
+---
 
-**Name**: Rudrajit Bhattacharyya
-This project was a part of AlmaBetter Full Stack Data Science Certificate.
+### About the Author
+
+**Author**: Rudrajit Bhattacharyya  
+This project was developed as part of the **AlmaBetter Full Stack Data Science** program.
   
 - **Email**: [rudrajitb24@gmail.com](mailto:rudrajitb24@gmail.com)  
 - **LinkedIn**: [rudrajitb](https://www.linkedin.com/in/rudrajitb/)  
